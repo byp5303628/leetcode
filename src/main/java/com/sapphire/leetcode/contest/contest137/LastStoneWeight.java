@@ -1,7 +1,6 @@
 package com.sapphire.leetcode.contest.contest137;
 
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Author: 柏云鹏
@@ -10,15 +9,12 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class LastStoneWeight {
 
     public int lastStoneWeight(int[] stones) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
         TreeSet<Node> integers = new TreeSet<Node>();
         for (int i = 0; i < stones.length; i++) {
             Node n = new Node();
             n.index = i;
             n.val = stones[i];
             integers.add(n);
-            map.put(i, stones[i]);
         }
 
         while (integers.size() > 1) {
